@@ -18,10 +18,6 @@ async fn dopanic() -> &'static str {
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    body().await
-}
-
-async fn body() -> std::io::Result<()> {
     // 2つの非同期を実行し，joinでまつ
     let (a, b) = tokio::join!(actix_body1(), actix_body2());
 
